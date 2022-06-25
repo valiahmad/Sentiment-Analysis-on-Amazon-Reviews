@@ -27,8 +27,8 @@ listofSet = [['\nChoose One For Tokenization : #1 NLTK   #2 SPACY : ',\
     'POS Tagging','nltk','None'],\
     ['\nDo You Want To Show A Report Of Words : #1 Yes   #2 No : ',\
     'report','show','no'],\
-    ['\nWhich Method Do You Want To Use : \n#1 Naive Bayes \n#2 Naive Bayes Binary \n#3 Binary & PosNeg \n#4 LSTM \n',\
-    'method','naivebayes', 'binary', 'binary&posneg', 'lstm',]\
+    ['\nWhich Method Do You Want To Use : \n#1 Naive Bayes \n#2 Naive Bayes Binary \n#3 Binary & PosNeg \n',\
+    'method','naivebayes', 'binary', 'binary&posneg']\
     ]
 
 def setprog():
