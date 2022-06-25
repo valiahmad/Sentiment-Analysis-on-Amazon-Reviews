@@ -2,7 +2,6 @@ from Preprocessing.datasetToListStructure import dictToList
 from Preprocessing.preprocessing import preprocessText
 from sklearn import metrics
 from calprecision import labeledDataToList, sortPrecisionList, precisionAve
-#from mylstm.lstm import myLSTM
 from mysetting import setprog, mysetting
 from indexing import makeIndex
 from NaiveBayes.naivebayes import naiveBayes
@@ -15,8 +14,8 @@ import datetime
 
 
 #setting of program
-# S = setprog()
-S = mysetting()
+S = setprog()
+# S = mysetting()
 
 path = 'Software.txt.gz'
 path2 = 'Gourmet_Foods.txt.gz'
