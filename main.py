@@ -81,33 +81,21 @@ if S['method'] == 'binary' or S['method'] == 'binary&posneg' or S['method'] == '
         print('='*60)
 
 
-#LSTM
-if S['method'] == 'lstm':
-    startTime = time.process_time()
-    #myLSTM(path)
-    endTime = time.process_time()
-    takeTime = str(datetime.timedelta(seconds=endTime-startTime))
-    print('\n\nLSTM Has Done Successfuly in %s .' % (takeTime))
 
-else:
-    precisionAve(totalResult)
-    common_words = str()
-    for tokens in myreport[0]:
-        common_words += ''.join(tokens)+' '
-    _wordcloud = wordcloud.WordCloud().generate(common_words)
-    plt.imshow(_wordcloud, interpolation='bilinear')
-    plt.axis("off")
-    plt.savefig('C:\\Users\\Vali Ahmad\\Desktop\\software_013.png',dpi=1200,bbox_inches='tight')
-    plt.savefig('C:\\Users\\Vali Ahmad\\Desktop\\software_013.pdf',dpi=1200,bbox_inches='tight')
+precisionAve(totalResult)
+common_words = str()
+for tokens in myreport[0]:
+    common_words += ''.join(tokens)+' '
+_wordcloud = wordcloud.WordCloud().generate(common_words)
+plt.imshow(_wordcloud, interpolation='bilinear')
+plt.axis("off")
+
+plt.figure()
+plot_confusion_matrix(myarr,[1,2,3,4,5],cmap=plt.cm.Blues)
+
+if S['method'] == 'binary&posneg':
     plt.figure()
-    plot_confusion_matrix(myarr,[1,2,3,4,5],cmap=plt.cm.Blues)
-    # plt.savefig('E:\\Article\\result_0001_mat.png')
-    # plt.savefig('E:\\Article\\result_0001_mat.pdf')
-    if S['method'] == 'binary&posneg':
-        plt.figure()
-        plt.pie(myreport[1],labels=['One-Star','Two-Stars','Three-Stars','Four-Stars','Five-Stars']
-            ,explode=[.1,.1,.1,.1,.1],autopct='%d%%')
-        plt.title('Participated Classes')
-        # plt.savefig('E:\\Article\\result_0001_pie.png')
-        # plt.savefig('E:\\Article\\result_0001_pie.pdf')
-    plt.show()
+    plt.pie(myreport[1],labels=['One-Star','Two-Stars','Three-Stars','Four-Stars','Five-Stars']
+        ,explode=[.1,.1,.1,.1,.1],autopct='%d%%')
+    plt.title('Participated Classes')
+plt.show()
