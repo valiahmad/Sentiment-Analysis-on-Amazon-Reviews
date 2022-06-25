@@ -1,0 +1,10 @@
+product_productId = 0
+product_title = 1
+product_price = 2
+review_userId = 3
+review_profileName = 4
+review_helpfulness = 5
+review_score = 6
+review_time = 7
+review_summary = 8
+review_text = 9
